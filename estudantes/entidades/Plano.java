@@ -27,6 +27,7 @@ public class Plano extends DocumentoAcademico {
     public boolean equals(Object o) {
         if (this == o)return true;
         if (o == null || getClass() != o.getClass())return false;
+        if(!super.equals(o))return false;
         Plano cast = (Plano) o;
         return Objects.equals(getResponsavel(), cast.getResponsavel())&& Arrays.equals(getPlanejamento(), cast.getPlanejamento());
     }

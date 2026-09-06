@@ -25,6 +25,7 @@ public abstract class Registro extends DocumentoAcademico {
     public boolean equals(Object o) {
         if (this == o)return true;
         if (o == null || getClass() != o.getClass())return false;
+        if(!super.equals(o))return false;
         Registro cast = (Registro) o;
         return getMatricula() == cast.getMatricula()&& Objects.equals(getEstudante(), cast.getEstudante());
     }
