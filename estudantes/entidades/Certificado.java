@@ -8,7 +8,7 @@ public class Certificado extends Registro {
 
     public Certificado(String criador, CodigoCurso codigoCurso, int paginas, long autenticacao,
                         String estudante, long matricula, String descricao) {
-        super(criador, codigoCurso, paginas, autenticacao, estudante, matricula);
+        super(estudante, matricula, criador, codigoCurso, paginas, autenticacao);
         this.descricao = descricao;
     }
 
