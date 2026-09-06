@@ -3,11 +3,11 @@ package estudantes.entidades;
 import professor.entidades.CodigoCurso;
 import java.util.Objects;
 
-public abstract class Documento Academico extends Documento {
+public abstract class DocumentoAcademico extends Documento {
     private long autenticacao;
 
-    public class DocumentoAcademico(String criador, CodigoCurso codigoCurso, int paginas, long autenticacao) {
-        super(getCriador(), getCodigoCurso(), getPaginas());
+    public DocumentoAcademico(String criador, CodigoCurso codigoCurso, int paginas, long autenticacao) {
+        super(criador, codigoCurso, paginas);
         this.autenticacao = autenticacao;
     }
 
@@ -16,9 +16,11 @@ public abstract class Documento Academico extends Documento {
     }
 
     @Override
-    public boolean equals(Object o){
-        if this == o) return true;
-        if (o == null) || getclass() != o.getClass()) return false;
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
         DocumentoAcademico cast = (DocumentoAcademico) o;
         return getPaginas() == cast.getPaginas()
                 && getAutenticacao() == cast.getAutenticacao()
@@ -31,5 +33,3 @@ public abstract class Documento Academico extends Documento {
         return Objects.hash(getCriador(), getCodigoCurso(), getPaginas(), getAutenticacao());
     }
 }
-
-
