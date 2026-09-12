@@ -9,7 +9,7 @@ public class Plano extends DocumentoAcademico {
     private String responsavel;
     private String[] planejamento;
 
-    public Plano(String responsavel, String[] planejamento, String criador, CodigoCurso codigoCurso, int paginas, long autenticacao) {
+    public Plano(String criador, CodigoCurso codigoCurso, int paginas, long autenticacao, String responsavel, String[] planejamento) {
         super(criador, codigoCurso, paginas, autenticacao);
         this.responsavel = responsavel;
         this.planejamento = planejamento;

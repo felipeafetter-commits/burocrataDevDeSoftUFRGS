@@ -2,14 +2,14 @@ package estudantes.entidades;
 
 import java.util.Arrays;
 import professor.entidades.CodigoCurso;
-import java.util.Objects;;
+import java.util.Objects;
 
 public class Historico extends Registro {
     private double coeficiente;
     private String[] componentes;
 
-    public Historico(double coeficiente, String[] componentes, String estudante, long matricula, String criador, CodigoCurso codigoCurso, int paginas, long autenticacao) {
-        super(estudante, matricula, criador, codigoCurso, paginas, autenticacao);
+    public Historico(String criador, CodigoCurso codigoCurso, int paginas, long autenticacao, String estudante, long matricula, double coeficiente, String[] componentes) {
+        super(criador, codigoCurso, paginas, autenticacao, estudante, matricula); // ← trocar aqui
         this.coeficiente = coeficiente;
         this.componentes = componentes;
     }
@@ -33,7 +33,7 @@ public class Historico extends Registro {
 
     @Override
     public int hashCode() {
-        int result = Objects.hash(getCoeficiente());
+        int result = Objects.hash(super.hashCode(), getCoeficiente());
         result = 31 * result + Arrays.hashCode(getComponentes());
         return result;
     }

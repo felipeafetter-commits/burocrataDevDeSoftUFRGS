@@ -6,17 +6,17 @@ import java.util.Arrays;
 
 public class Edital extends Norma {
 
-    private String Destinatarios[];
+    private String responsaveis[];
 
     public Edital(String criador, CodigoCurso codigoCurso, int paginas, int numero, boolean valido, String texto,
-            String destinatarios[]) {
+            String responsaveis[]) {
         super(criador, codigoCurso, paginas, numero, valido, texto);
-        this.Destinatarios = destinatarios;
+        this.responsaveis = responsaveis;
 
     }
 
-    public String[] getDestinatarios() {
-        return Destinatarios;
+    public String[] getResponsaveis() {
+        return responsaveis;
 
     }
 
@@ -26,12 +26,12 @@ public class Edital extends Norma {
             return false;
         }
         Edital outro = (Edital) obj;
-        return Arrays.equals(this.Destinatarios, outro.Destinatarios);
+        return Arrays.equals(this.responsaveis, outro.responsaveis);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), Arrays.hashCode(this.Destinatarios));
+        return Objects.hash(super.hashCode(), Arrays.hashCode(this.responsaveis));
     }
 
 }

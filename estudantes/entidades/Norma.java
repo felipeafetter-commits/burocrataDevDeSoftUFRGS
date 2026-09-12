@@ -7,27 +7,31 @@ import professor.entidades.CodigoCurso;
 
 public class Norma extends DocumentoAdministrativo {
 
-    private int Numero;
-    private boolean Valido;
-    private String Texto;
+    private int numero;
+    private boolean valido;
+    private String texto;
 
     public Norma(String criador, CodigoCurso codigoCurso, int paginas, int numero, boolean valido, String texto) {
         super(criador, codigoCurso, paginas);
-        this.Numero = numero;
-        this.Valido = valido;
-        this.Texto = texto;
+        this.numero = numero;
+        this.valido = valido;
+        this.texto = texto;
     }
 
     public int getNumero() {
-        return Numero;
+        return numero;
     }
 
     public boolean getValido() {
-        return Valido;
+        return valido;
+    }
+
+    public boolean isValido() {
+        return valido;
     }
 
     public String getTexto() {
-        return Texto;
+        return texto;
     }
 
     @Override
@@ -39,9 +43,9 @@ public class Norma extends DocumentoAdministrativo {
             return false;
         }
         Norma outra = (Norma) obj;
-        return this.Numero == outra.Numero
-                && this.Valido == outra.Valido
-                && this.Texto.equals(outra.Texto)
+        return this.numero == outra.numero
+                && this.valido == outra.valido
+                && this.texto.equals(outra.texto)
                 && this.getCriador().equals(outra.getCriador())
                 && this.getCodigoCurso().equals(outra.getCodigoCurso())
                 && this.getPaginas() == outra.getPaginas();
@@ -49,7 +53,7 @@ public class Norma extends DocumentoAdministrativo {
 
     @Override
     public int hashCode() {
-        return Objects.hash(Numero, Valido, Texto, getCriador(), getCodigoCurso(), getPaginas());
+        return Objects.hash(numero, valido, texto, getCriador(), getCodigoCurso(), getPaginas());
     }
 
 }
