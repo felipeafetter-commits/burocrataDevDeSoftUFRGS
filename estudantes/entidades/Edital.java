@@ -31,7 +31,7 @@ public class Edital extends Norma {
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), Arrays.hashCode(this.responsaveis)); // Gera Hashcode, dois objetos referentes ao mesmo edital terão o mesmo hascode
+        return Objects.hash(super.hashCode(), Arrays.hashCode(this.responsaveis)); // Gera o hash combinando os dados do edital e os responsáveis.
     }
 
 }
