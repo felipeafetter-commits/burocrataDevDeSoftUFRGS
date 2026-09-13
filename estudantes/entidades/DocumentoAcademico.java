@@ -29,7 +29,7 @@ public abstract class DocumentoAcademico extends Documento {
         if (this == o) return true; //ve se tem a mesma instancia de memoria
         if (o == null || getClass() != o.getClass()) return false; //Garante que o objeto nao e nulo e que ambos sao da mesma classe exata
         
-        DocumentoAcademico cast = (DocumentoAcademico) o; //cast
+        DocumentoAcademico cast = (DocumentoAcademico) o; //casting
         
         //Compara os atributos da classe base (paginas, criador, codigoCurso) junto com a autenticacao desta classe
         return getPaginas() == cast.getPaginas()

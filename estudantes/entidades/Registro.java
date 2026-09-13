@@ -35,7 +35,7 @@ public abstract class Registro extends DocumentoAcademico {
         if (this == o)return true; //ve se tem a mesma instancia de memoria
         if (o == null || getClass() != o.getClass())return false; //Garante que o objeto nao e nulo e que ambos sao da mesma classe exata
         if(!super.equals(o))return false;
-        Registro cast = (Registro) o; //cast
+        Registro cast = (Registro) o; //casting
         return getMatricula() == cast.getMatricula()&& Objects.equals(getEstudante(), cast.getEstudante());
     }
 

@@ -10,7 +10,7 @@ public class Portaria extends Norma {
     public Portaria(String criador, CodigoCurso codigoCurso, int paginas, int numero, boolean valido, String texto,
             int anoinicio) {
 
-        super(criador, codigoCurso, paginas, numero, valido, texto); // Classe filha de Norma e herda seus atributod
+        super(criador, codigoCurso, paginas, numero, valido, texto); // Classe filha de Norma e herda seus atributos
         this.anoInicio = anoinicio;
     }
 
@@ -29,7 +29,7 @@ public class Portaria extends Norma {
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), anoInicio); // Cria código Hash, dois objetos iguais pelo eqauls terão mesmo código
+        return Objects.hash(super.hashCode(), anoInicio); // Cria código Hash, dois objetos iguais pelo equals terão mesmo código
     }
 
 }

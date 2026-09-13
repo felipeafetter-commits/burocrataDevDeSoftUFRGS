@@ -11,7 +11,7 @@ import java.util.Objects;
  */
 public class Historico extends Registro {
     private double coeficiente; //coeficiente de rendimento nota media do estudante
-    private String[] componentes; //vetor contendo os  disciplinas cursadas
+    private String[] componentes; //vetor contendo as  disciplinas cursadas
 
     //construtor
     public Historico(String criador, CodigoCurso codigoCurso, int paginas, long autenticacao, String estudante, long matricula, double coeficiente, String[] componentes) {
@@ -37,7 +37,7 @@ public class Historico extends Registro {
         if (o == null || getClass() != o.getClass()) return false; //Garante que o objeto nao e nulo e que ambos sao da mesma classe exata
         if (!super.equals(o)) return false; //Usa a logica do pai para checar os dados herdados
         
-        Historico cast = (Historico) o; //cast
+        Historico cast = (Historico) o; //casting
         return Double.compare(cast.getCoeficiente(), getCoeficiente()) == 0 && Arrays.equals(getComponentes(), cast.getComponentes());
     }
 

@@ -40,7 +40,7 @@ public class Norma extends DocumentoAdministrativo {
             return true; // se forem exatamente o mesmo objeto, retorna true
         }
         if (obj == null || getClass() != obj.getClass()) {
-            return false; // se for vazio ou uma de uma classe diferente, retorna flase
+            return false; // se for vazio ou uma de uma classe diferente, retorna false
         }
         Norma outra = (Norma) obj; // faz o casting do objeto tipo obj para Norma, já que os testes anteriores comprovam que tratasse de uma Norma
         return this.numero == outra.numero // testa condição por condição para saber se tratam-se da mesma Norma, mas em objetos diferentes
