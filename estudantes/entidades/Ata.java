@@ -5,10 +5,12 @@ import java.util.Arrays;
 import java.util.Objects;
 
 public class Ata extends Documento {
+    // definição de atributos
     private int numero;
     private String texto;
     private String[] presentes;
 
+    // construtor
     public Ata(String criador, CodigoCurso codigoCurso, int paginas, int numero, String texto, String[] presentes) {
         super(criador, codigoCurso, paginas);
         this.numero = numero;
@@ -16,6 +18,7 @@ public class Ata extends Documento {
         this.presentes = presentes;
     }
 
+    // getters
     public int getNumero() {
         return numero;
     }
