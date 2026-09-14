@@ -5,9 +5,9 @@ import java.util.Arrays;
 import java.util.Objects;
 
 /**
- * Classe que representa um plano academico.
- * Estende de DocumentoAcademico para herdar atributos comuns,
- * adicionando o responsavel e as etapas do planejamento.
+ * classe que representa um plano academico.
+ * estende de DocumentoAcademico para herdar atributos comuns,
+ * adicionando o responsavel e as etapas do planejamento
  */
 public class Plano extends DocumentoAcademico {
     private String responsavel; //nome do responsavel pelo plano
@@ -32,20 +32,20 @@ public class Plano extends DocumentoAcademico {
     //metodos equals e hash code
     @Override
     public boolean equals(Object o) {
-        //Verifica se o objeto comparado é da mesma classe e possui exatamente os mesmos dados herdados, o mesmo responsavel e o mesmo planejamento
+        //verifica se o objeto comparado é da mesma classe e possui exatamente os mesmos dados herdados, o mesmo responsavel e o mesmo planejamento
         if (this == o) return true; //ve se tem a mesma instancia de memoria
-        if (o == null || getClass() != o.getClass()) return false; //Garante que o objeto nao e nulo e que ambos sao da mesma classe exata
-        if (!super.equals(o)) return false; //Usa a logica do pai para checar os dados herdados
+        if (o == null || getClass() != o.getClass()) return false; //garante que o objeto nao e nulo e que ambos sao da mesma classe exata
+        if (!super.equals(o)) return false; //usa a logica do pai para checar os dados herdados
         
-        Plano cast = (Plano) o; //cast
-        return Objects.equals(getResponsavel(), cast.getResponsavel()) && Arrays.equals(getPlanejamento(), cast.getPlanejamento());
+        Plano cast = (Plano) o; //casting
+        return Objects.equals(getResponsavel(), cast.getResponsavel()) && Arrays.equals(getPlanejamento(), cast.getPlanejamento()); //compara os atributos se sao iguais
     }
 
     @Override
-    //Gera um numero de identificacao para o plano baseado no responsavel e no planejamento, usado para organizar o objeto em colecoes
+    //gera um numero de identificacao para o plano baseado nos dados herdados, responsavel e no planejamento, usado para organizar o objeto em colecoes
     public int hashCode() {
-        int result = Objects.hash(getResponsavel());
-        result = 31 * result + Arrays.hashCode(getPlanejamento());
+        int result = Objects.hash(super.hashCode(), getResponsavel());
+        result = 31 * result + Arrays.hashCode(getPlanejamento());//a multiplicação pelo número primo 31 serve para espalhar melhor os valores e minimizar a colisão entre objetos diferentes
         return result;
-    }
+}
 }

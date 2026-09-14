@@ -6,8 +6,9 @@ import java.util.Arrays;
 
 public class Edital extends Norma {
 
-    private String responsaveis[];
+    private String responsaveis[];// Array que armazena os nomes dos responsáveis pelo edital
 
+    //construtor
     public Edital(String criador, CodigoCurso codigoCurso, int paginas, int numero, boolean valido, String texto,
             String responsaveis[]) {
         super(criador, codigoCurso, paginas, numero, valido, texto); // Classe filha de Norma e herda todos os seus atributos
@@ -15,6 +16,7 @@ public class Edital extends Norma {
 
     }
 
+    //getters   
     public String[] getResponsaveis() { // Metodo que retorna estados do atributo privado responsaveis
         return responsaveis;
 
@@ -31,7 +33,7 @@ public class Edital extends Norma {
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), Arrays.hashCode(this.responsaveis)); // Gera Hashcode, dois objetos referentes ao mesmo edital terão o mesmo hascode
+        return Objects.hash(super.hashCode(), Arrays.hashCode(this.responsaveis)); // Gera o hash combinando os dados do edital e os responsáveis
     }
 
 }

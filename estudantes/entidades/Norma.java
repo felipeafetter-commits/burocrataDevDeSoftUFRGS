@@ -1,8 +1,6 @@
 package estudantes.entidades;
 
-import java.util.Arrays;
 import java.util.Objects;
-import estudantes.entidades.DocumentoAdministrativo;
 import professor.entidades.CodigoCurso;
 
 public class Norma extends DocumentoAdministrativo {
@@ -40,15 +38,15 @@ public class Norma extends DocumentoAdministrativo {
             return true; // se forem exatamente o mesmo objeto, retorna true
         }
         if (obj == null || getClass() != obj.getClass()) {
-            return false; // se for vazio ou uma de uma classe diferente, retorna flase
+            return false; // se for vazio ou uma de uma classe diferente, retorna false
         }
         Norma outra = (Norma) obj; // faz o casting do objeto tipo obj para Norma, já que os testes anteriores comprovam que tratasse de uma Norma
         return this.numero == outra.numero // testa condição por condição para saber se tratam-se da mesma Norma, mas em objetos diferentes
-                && this.valido == outra.valido
-                && this.texto.equals(outra.texto)
-                && this.getCriador().equals(outra.getCriador())
-                && this.getCodigoCurso().equals(outra.getCodigoCurso())
-                && this.getPaginas() == outra.getPaginas();
+            && this.valido == outra.valido
+            && Objects.equals(this.texto, outra.texto)
+            && Objects.equals(this.getCriador(), outra.getCriador())
+            && this.getCodigoCurso() == outra.getCodigoCurso()
+            && this.getPaginas() == outra.getPaginas();
     }
 
     @Override

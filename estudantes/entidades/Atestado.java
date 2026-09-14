@@ -37,7 +37,7 @@ public class Atestado extends Registro {
         if (!super.equals(o)) return false; //Usa a logica do pai para checar os dados herdados
         
         Atestado cast = (Atestado) o; //cast
-        return Objects.equals(getDescricao(), cast.getDescricao()) && Objects.equals(getCategoria(), cast.getCategoria());
+        return Objects.equals(getDescricao(), cast.getDescricao()) && Objects.equals(getCategoria(), cast.getCategoria());//compara os atributos se sao iguais
     }
 
     @Override   

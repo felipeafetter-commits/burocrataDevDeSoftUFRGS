@@ -9,7 +9,7 @@ public class Certificado extends Registro {
 
     // construtor
     public Certificado(String criador, CodigoCurso codigoCurso, int paginas, long autenticacao,
-        String estudante, long matricula, String descricao) {
+            String estudante, long matricula, String descricao) {
         super(criador, codigoCurso, paginas, autenticacao, estudante, matricula);
         this.descricao = descricao;
     }
