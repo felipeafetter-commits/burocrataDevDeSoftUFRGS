@@ -1,3 +1,7 @@
+/**
+ * @author Otávio Zucchetti Dalla Costa (616320), Felipe Burmann Machado (602624), Felipe Fetter (609593)
+ */
+
 package estudantes.entidades;
 
 import professor.entidades.CodigoCurso;
