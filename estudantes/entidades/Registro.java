@@ -36,10 +36,10 @@ public abstract class Registro extends DocumentoAcademico {
         if (o == null || getClass() != o.getClass())return false; //garante que o objeto nao e nulo e que ambos sao da mesma classe exata
         if(!super.equals(o))return false;
         Registro cast = (Registro) o; //casting
-        return getMatricula() == cast.getMatricula()&& Objects.equals(getEstudante(), cast.getEstudante());
+        return getMatricula() == cast.getMatricula()&& Objects.equals(getEstudante(), cast.getEstudante()); //compara os atributos se sao iguais
     }
 
     @Override
-    //gera um numero de identificacao para o registro baseado no nome e na matricula do estudante, usado para organizar o objeto em colecoes
+    //gera um numero de identificacao para o registro baseado nos dados herdados, nome e na matricula do estudante, usado para organizar o objeto em colecoes
     public int hashCode() {return Objects.hash(super.hashCode(), getEstudante(), getMatricula());}
 }

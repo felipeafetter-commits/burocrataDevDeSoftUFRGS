@@ -38,11 +38,11 @@ public class Plano extends DocumentoAcademico {
         if (!super.equals(o)) return false; //usa a logica do pai para checar os dados herdados
         
         Plano cast = (Plano) o; //casting
-        return Objects.equals(getResponsavel(), cast.getResponsavel()) && Arrays.equals(getPlanejamento(), cast.getPlanejamento());
+        return Objects.equals(getResponsavel(), cast.getResponsavel()) && Arrays.equals(getPlanejamento(), cast.getPlanejamento()); //compara os atributos se sao iguais
     }
 
     @Override
-    //gera um numero de identificacao para o plano baseado no responsavel e no planejamento, usado para organizar o objeto em colecoes
+    //gera um numero de identificacao para o plano baseado nos dados herdados, responsavel e no planejamento, usado para organizar o objeto em colecoes
     public int hashCode() {
         int result = Objects.hash(super.hashCode(), getResponsavel());
         result = 31 * result + Arrays.hashCode(getPlanejamento());//a multiplicação pelo número primo 31 serve para espalhar melhor os valores e minimizar a colisão entre objetos diferentes

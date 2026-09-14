@@ -38,14 +38,14 @@ public class Historico extends Registro {
         if (!super.equals(o)) return false; //usa a logica do pai para checar os dados herdados
         
         Historico cast = (Historico) o; //casting
-        return Double.compare(cast.getCoeficiente(), getCoeficiente()) == 0 && Arrays.equals(getComponentes(), cast.getComponentes());
+        return Double.compare(cast.getCoeficiente(), getCoeficiente()) == 0 && Arrays.equals(getComponentes(), cast.getComponentes());//compara os atributos se sao iguais
     }
 
     @Override
     //gera um numero de identificacao para o historico baseado nos dados herdados, no coeficiente e nos componentes, usado para organizar o objeto em colecoes
     public int hashCode() {
         int result = Objects.hash(super.hashCode(), getCoeficiente());
-        result = 31 * result + Arrays.hashCode(getComponentes());
+        result = 31 * result + Arrays.hashCode(getComponentes()); //a multiplicação pelo número primo 31 serve para espalhar melhor os valores e minimizar a colisão entre objetos diferentes
         return result;
     }
 }

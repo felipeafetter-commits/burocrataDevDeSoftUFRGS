@@ -31,7 +31,7 @@ public abstract class DocumentoAcademico extends Documento {
         
         DocumentoAcademico cast = (DocumentoAcademico) o; //casting
         
-        //compara os atributos da classe base (paginas, criador, codigoCurso) junto com a autenticacao desta classe
+        //compara todos os atributos da classe base junto com a autenticacao da classe DocumentoAcademico 
         return getPaginas() == cast.getPaginas()
                 && getAutenticacao() == cast.getAutenticacao()
                 && Objects.equals(getCriador(), cast.getCriador())
